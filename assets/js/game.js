@@ -929,7 +929,15 @@ class Engine
 				let runBtn = document.getElementById('run-button');
 				runBtn.addEventListener('click', () => { this.checkCode(); }, false);
 
-	  			window.addEventListener('resize', () => { this.updateCanvasSize(); }, false);
+				document.onkeydown = event=>{ 
+					if(event.ctrlKey && event.keyCode === 13){
+						this.checkCode();
+					}
+				}
+
+				window.addEventListener('resize', () => { this.updateCanvasSize(); }, false);
+				  
+				
 
 				let introButton = document.getElementById('intro-button');
 				introButton.addEventListener('click', () => { this.closeGameIntro(); }, false);
