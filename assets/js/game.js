@@ -931,7 +931,7 @@ class Engine
 
 				window.addEventListener('resize', () => { this.updateCanvasSize(); }, false);
 				  
-				
+				document.onkeydown = event=>{ if(event.ctrlKey && event.keyCode === 13){ this.checkCode(); } };
 
 				let introButton = document.getElementById('intro-button');
 				introButton.addEventListener('click', () => { this.closeGameIntro(); }, false);
